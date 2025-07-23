@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use Illuminate\Pagination\Paginator;
 
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
@@ -15,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        //    Paginator::useBootstrap();
     }
 
     /**
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
    public function boot(): void
 {
+        Paginator::useBootstrap();
    if (Schema::hasTable('categories')) {
        View::share('categories', Category::orderBy('name')->get());
    }
