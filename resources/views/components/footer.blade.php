@@ -8,9 +8,11 @@
             <div class="col-md-3">
                 <h6>Link Utili</h6>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white-50 text-decoration-none">Chi siamo</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Contatti</a></li>
-                    <li><a href="#" class="text-white-50 text-decoration-none">Privacy</a></li>
+                    <div class="col-md-5 offset-md-1 mb-3 text-center">
+                        <h5>Vuoi diventare revisore?</h5>
+                        <p>Cliccando il bottone sottostante farai richiesta al nostro admin</p>
+                        <a href="{{ route('become.revisor') }}" class="btn btn-success">diventa revisore</a>
+                    </div>
                 </ul>
             </div>
             <div class="col-md-3">
