@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
+    
+   use Searchable;
    use HasFactory;
    protected $fillable = [
        'title', 'description', 'price', 'category_id', 'user_id'
@@ -33,5 +36,18 @@ public function setAccepted($value)
 public static function toBeRevisedCount()
 {
     return Article::where('is_accepted', null)->count();
+}
+
+
+public function toSearchableArray()
+{
+    return [
+        'id'=>$this->id,
+        'title' =>$this->title,
+        'description'=>$this->description,
+        'category'=>$this->category
+    ];
+
+    
 }
 }

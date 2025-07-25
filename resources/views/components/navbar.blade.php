@@ -14,6 +14,14 @@
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{{ route('article.index') }}">Tutti gli articoli</a>
             </li>
+           
+<form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
+    <div class="input-group">
+        <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+        <button type="submit" class="input-group-text btn btn-outline-success"
+                id="basic-addon2">Search</button>
+    </div>
+</form>
             @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
